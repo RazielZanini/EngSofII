@@ -1,0 +1,36 @@
+.footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 3em;
+}
+
+.infoList{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.infoList li{
+    margin: 0 0.5em;
+}
+
+.infoList li:hover{
+    color: #ffbb33;
+}
+
+.infoList svg{
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.copyright {
+    margin-top: 2em;
+}
+
+.copyright span {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: #ffbb33;
+}
