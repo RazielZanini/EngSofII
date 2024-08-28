@@ -1,17 +1,42 @@
 .navbar{
     display: flex;
-    background-color: #333;
-    padding: 20px 10px;
-    list-style-type: none;
+    width: 100%;
+    height: auto;
+    
 }
 
-.navbar a{
-    color: white;
-    margin-right: 1em;
+.container{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    padding: 15px;
+}
+
+.logo{
+    width:130px;
+    margin: 5px 0;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+    padding: 10px 0;
+    gap:20px
+}
+
+.menu a{
+    font-size: 0.9rem;
+    transition: all linear 160ms;
+    color: #cbd5e1;
     text-decoration: none;
-    transition: .3s;
 }
 
-.navbar a:hover{
-    color: #ffbb33;
+.menu a:hover{
+    color: #a3e635;
 }

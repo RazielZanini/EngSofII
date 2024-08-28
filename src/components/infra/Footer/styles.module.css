@@ -16,7 +16,7 @@
 }
 
 .infoList li:hover{
-    color: #ffbb33;
+    color: tomato;
 }
 
 .infoList svg{
@@ -32,5 +32,5 @@
     display: flex;
     justify-content: center;
     font-weight: bold;
-    color: #ffbb33;
+    color: tomato;
 }
