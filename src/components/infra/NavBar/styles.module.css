@@ -17,7 +17,7 @@
 }
 
 .logo{
-    width:130px;
+    width:200px;
     margin: 5px 0;
 }
 
@@ -31,12 +31,12 @@
 }
 
 .menu a{
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: all linear 160ms;
     color: #cbd5e1;
     text-decoration: none;
 }
 
 .menu a:hover{
-    color: #a3e635;
+    color: #34d399;
 }
