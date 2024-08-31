@@ -12,7 +12,7 @@ export default function Navbar() {
 
                 <nav className={styles.menu}>
                     <Link href="/">Conversor de Moedas</Link>
-                    <Link href="/about">Conversor de Distâncias</Link>
+                    <Link href="/DistanceConversor">Conversor de Distâncias</Link>
                 </nav>
             </div>
         </div>

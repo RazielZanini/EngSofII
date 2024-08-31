@@ -13,6 +13,7 @@ export default function Home() {
   const [msg, setMsg] = useState(null)
   const [coin, setCoin] = useState('BRL') // Valor inicial
   const [coinConvert, setCoinConvert] = useState('USD') // Valor inicial
+  const date = new Date().toLocaleString('pt-BR', { timeZoneName: 'short' })
 
   useEffect(() => {
     const loadCambio = async () => {
@@ -94,7 +95,7 @@ export default function Home() {
             {cambio[`${coin}${coinConvert}`] && (
               <div className={styles.info}>
                 <h3>{`${coin} 1 = ${cambio[`${coin}${coinConvert}`].bid} ${coinConvert}`}</h3>
-                <p>Câmbio comercial às 16:47 UTC</p>
+                <p>Câmbio comercial às {date}</p>
               </div>
             )}
 
