@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import styles from './styles.module.css'
 
@@ -9,11 +8,11 @@ export default function Navbar() {
 
         <div className={styles.navbar}>
             <div className={styles.container}>
-                <img src="/images/logo.png" className={styles.logo} />
+                <Link href="/"><img src="/images/logo.png" className={styles.logo} /></Link>
 
                 <nav className={styles.menu}>
-                    <Link href="#">Conversor de Moedas</Link>
-                    <Link href="#">Conversor de Distâncias</Link>
+                    <Link href="/">Conversor de Moedas</Link>
+                    <Link href="/about">Conversor de Distâncias</Link>
                 </nav>
             </div>
         </div>

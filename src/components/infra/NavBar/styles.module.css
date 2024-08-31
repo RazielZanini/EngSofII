@@ -19,6 +19,7 @@
 .logo{
     width:200px;
     margin: 5px 0;
+    cursor: pointer;
 }
 
 .menu{

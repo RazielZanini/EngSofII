@@ -111,3 +111,20 @@
 .btn:hover{
   background-color: #1e293b;
 }
+
+.selectContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 20px;
+  margin-left: -10px;
+}
+
+.selectContainer select{
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 2px black;
+}
+
