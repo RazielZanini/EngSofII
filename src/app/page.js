@@ -7,40 +7,33 @@ import axios from 'axios';
 
 export default function Home() {
 
-  const [convertedValue, setConvertedValue] = useState("")
-  const [value, setValue] = useState("")
+  const [convertedValue, setConvertedValue] = useState('')
+  const [value, setValue] = useState('')
   const [cambio, setCambio] = useState({})
-  const [msg, setMsg] = useState(null)
+  // const [msg, setMsg] = useState(null)
   const [coin, setCoin] = useState('BRL') // Valor inicial
   const [coinConvert, setCoinConvert] = useState('USD') // Valor inicial
-  const date = new Date().toLocaleString('pt-BR', { timeZoneName: 'short' })
+  // const date = new Date().toLocaleString('pt-BR', { timeZoneName: 'short' })
 
   useEffect(() => {
     const loadCambio = async () => {
-      if (coin && coinConvert) {  // Verifica se ambas as moedas estão definidas
+      if (value) {  // Verifica se ambas as moedas estão definidas
         try {
           const results = await axios({
             method: 'GET',
-            url: `https://economia.awesomeapi.com.br/last/${coin}-${coinConvert}`,
+            url: `/conversion-service/1/${value}/${coin}/${coinConvert}`,
             responseType: 'json',
           });
+          console.log(results.data)
           setCambio(results.data)
         } catch (error) {
-          setMsg({ type: 'error', message: 'Erro ao carregar as moedas' })
+          console.log(error)
         }
       }
     }
 
     loadCambio()
-  }, [coin, coinConvert]) // Chama o useEffect sempre que coin ou coinConvert mudarem
-
-  function convert() {
-    const exchangeRate = cambio[`${coin}${coinConvert}`]?.bid;
-    if (!exchangeRate) {
-      return 0;
-    }
-    return (value * exchangeRate).toFixed(2);
-  }
+  }, [value, convertedValue, coin, coinConvert]) // Chama o useEffect sempre que coin ou coinConvert mudarem
 
   // Função para inverter as moedas
   function swapCoins() {
@@ -92,14 +85,14 @@ export default function Home() {
 
           <div className={styles.areaInfo}>
 
-            {cambio[`${coin}${coinConvert}`] && (
+            {/* {cambio[`${coin}${coinConvert}`] && (
               <div className={styles.info}>
-                <h3>{`${coin} 1 = ${cambio[`${coin}${coinConvert}`].bid} ${coinConvert}`}</h3>
+                <h3>{`${coin} 1 = ${cambio[`${coin}${coinConvert}`].value} ${coinConvert}`}</h3>
                 <p>Câmbio comercial às {date}</p>
               </div>
-            )}
+            )} */}
 
-            <button className={styles.btn} onClick={() => setConvertedValue(convert())}>CONVERTER</button>
+            <button className={styles.btn} onClick={() => setConvertedValue(cambio.value)}>CONVERTER</button>
 
           </div>
 
